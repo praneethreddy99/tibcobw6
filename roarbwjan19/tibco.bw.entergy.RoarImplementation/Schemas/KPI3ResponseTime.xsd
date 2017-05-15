@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema elementFormDefault="qualified" targetNamespace="http://www.entergy.com/KPI3ResponseTime" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.entergy.com/KPI3ResponseTime">
+
+    <element name="Request" type="tns:RequestRespTimeType"/>
+    
+    <element name="Response" type="tns:RespTimeServType" />
+
+    <complexType name="RequestRespTimeType">
+    	<sequence>
+    		<element name="FailCntReqInterval" type="string"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="RespTimeServType">
+    	<sequence>
+    		<element name="Services" type="tns:ServicesType" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ServicesType">
+    	<sequence>
+    		<element name="ServiceName" type="string" minOccurs="0"></element>
+    		<element name="ServiceHits" type="string" maxOccurs="1"	minOccurs="0"></element>
+    		<element name="MaxRespTime" type="string" maxOccurs="1"	minOccurs="0"></element>
+    		<element name="AvgRespTime" type="double" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

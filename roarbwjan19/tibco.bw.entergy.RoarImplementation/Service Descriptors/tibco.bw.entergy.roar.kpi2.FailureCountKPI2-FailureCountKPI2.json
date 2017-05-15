@@ -1,0 +1,76 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/failurecountkpi2" : {
+      "post" : {
+        "description" : "",
+        "operationId" : "post-failurecountkpi2",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Request"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Response to be returned",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Response",
+                "uniqueItems" : false
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Response" : {
+      "type" : "object",
+      "properties" : {
+        "Services" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Services",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "Services" : {
+      "type" : "object",
+      "properties" : {
+        "ServiceName" : {
+          "type" : "string"
+        },
+        "FailureCount" : {
+          "type" : "integer"
+        }
+      }
+    },
+    "Request" : {
+      "type" : "object",
+      "required" : [ "FailCntReqInterval" ],
+      "properties" : {
+        "FailCntReqInterval" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

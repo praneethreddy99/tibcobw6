@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.entergy.com/KPI2FailedServices" elementFormDefault="qualified" targetNamespace="http://www.entergy.com/KPI2FailedServices">
+
+    <element name="Request" type="tns:RequestFailedServicesType"/>
+    
+    <element name="Response" type="tns:RespFailedServType"/>
+
+    <complexType name="RequestFailedServicesType">
+    	<sequence>
+
+    		<element name="FailCntReqInterval" type="string"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="RespFailedServType">
+    	<sequence>
+    		<element maxOccurs="unbounded" minOccurs="0" name="Services" type="tns:ServicesType"/>
+    	</sequence>
+    </complexType>
+
+    <complexType name="ServicesType">
+    	<sequence>
+    		<element minOccurs="0" name="ServiceName" type="string"/>
+    		<element minOccurs="0" name="FailureCount" type="int"/>
+    	</sequence>
+    </complexType>
+    <complexType name="RequestArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="Request" type="tns:RequestFailedServicesType"/>
+    </sequence>
+  </complexType>
+    <element name="RequestArray" type="tns:RequestArray"/>
+</schema>

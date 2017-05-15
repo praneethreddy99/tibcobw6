@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:httpconnector="http://xsd.tns.tibco.com/bw/models/sharedresource/httpconnector" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_T-D9waJPEearg_Sw5bg77A" name="tibco.bw.entergy.roarimplementation.AuthenticationService" type="httpconnector:HttpConnectorConfiguration">
+  <jndi:configuration xsi:type="httpconnector:HttpConnectorConfiguration" xmi:id="_T-D9wqJPEearg_Sw5bg77A">
+    <substitutionBindings xmi:id="_T-D9w6JPEearg_Sw5bg77A" template="host" propName="BW.HOST.NAME"/>
+    <substitutionBindings xmi:id="_63tr4LueEeaR-pKa3f9kBA" template="port" propName="/HTTP/HTTPPort"/>
+  </jndi:configuration>
+</jndi:namedResource>

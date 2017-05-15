@@ -1,0 +1,29 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "http://192.168.59.103:8888"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/tibco.bw.entergy.roar.kpi1.TopServicesKPIImpl-TopServicesKPIImpl.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/tibco.bw.entergy.roar.kpi2.FailureCountKPI2-FailureCountKPI2.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/tibco.bw.entergy.roar.kpi3.AvgRespTimeKPI3-Resource.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/tibco.bw.entergy.roar.kpi3.DomainDetails-DomainDetails.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/tibco.bw.entergy.roar.kpi1.AuthenticationService-AuthenticationService.json",
+            "type": "generated"
+        }
+    ]
+}

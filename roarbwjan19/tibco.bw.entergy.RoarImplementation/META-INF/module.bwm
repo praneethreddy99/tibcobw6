@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:property="http://ns.tibco.com/bw/property" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_jyt-wKJOEearg_Sw5bg77A" targetNamespace="http://tns.tibco.com/bw/composite/tibco.bw.entergy.RoarImplementation" name="tibco.bw.entergy.RoarImplementation" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_vCR-QK_SEeaes6nhJnhlyQ" name="toptenkpi" promote="ComponentTopServicesKPIImpl/toptenkpi">
+    <sca:interface.wsdl xmi:id="_vCuqMK_SEeaes6nhJnhlyQ" interface="http://xmlns.example.com/20161121154031PLT#wsdl.interface(toptenkpi)" scaext:wsdlLocation="../Processes/tibco/bw/entergy/roarimplementation/TopServicesKPIImpl.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_vCuqMa_SEeaes6nhJnhlyQ" name="RestService1" path="/toptenkpi" docBasePath="http://localhost:7777/tibco.bw.entergy.RoarImplementation" docResourcePath="TopServicesKPIImpl" basePath="/" connector="tibco.bw.entergy.roarimplementation.AuthenticationService" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/tibco.bw.entergy.roarimplementation.TopServicesKPIImpl-TopServicesKPIImpl.json">
+      <operation xmi:id="_vCuqMq_SEeaes6nhJnhlyQ" operationName="post" nickname="post-toptenkpi" httpMethod="POST" responseStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_vC4bMK_SEeaes6nhJnhlyQ"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_vCuqM6_SEeaes6nhJnhlyQ" bindingName="RestService1"/>
+  </sca:service>
+  <sca:service xmi:id="_lKXz1LVKEeaqgNMO2T_n-A" name="failurecountkpi2" promote="ComponentFailureCountKPI2/failurecountkpi2">
+    <sca:interface.wsdl xmi:id="_lKXz2LVKEeaqgNMO2T_n-A" interface="http://xmlns.example.com/20161128144100PLT#wsdl.interface(failurecountkpi2)" scaext:wsdlLocation="../Processes/tibco/bw/entergy/roar/kpi2/FailureCountKPI2.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_lKg9wLVKEeaqgNMO2T_n-A" name="RestService2" path="/failurecountkpi2" docBasePath="http://localhost:7777/tibco.bw.entergy.RoarImplementation" docResourcePath="FailureCountKPI2" basePath="/" connector="tibco.bw.entergy.roarimplementation.AuthenticationService" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/tibco.bw.entergy.roar.kpi2.FailureCountKPI2-FailureCountKPI2.json">
+      <operation xmi:id="_lKg9wbVKEeaqgNMO2T_n-A" operationName="post" nickname="post-failurecountkpi2" httpMethod="POST" responseStyle="array" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_lKquwLVKEeaqgNMO2T_n-A"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_lKg9wrVKEeaqgNMO2T_n-A" bindingName="RestService2"/>
+  </sca:service>
+  <sca:service xmi:id="_7ReugLezEeavRvj6FTgv0w" name="resptimekpi3" promote="ComponentAvgRespTimeKPI3/resptimekpi3">
+    <sca:interface.wsdl xmi:id="_7SFLcLezEeavRvj6FTgv0w" interface="http://xmlns.example.com/20161201162008PLT#wsdl.interface(resptimekpi3)" scaext:wsdlLocation="../Processes/tibco/bw/entergy/roar/kpi3/AvgRespTimeKPI3.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_7SYGYLezEeavRvj6FTgv0w" name="RestService3" path="/resptimekpi3" docBasePath="http://localhost:7777/tibco.bw.entergy.RoarImplementation" docResourcePath="Resource" basePath="/" connector="tibco.bw.entergy.roarimplementation.AuthenticationService" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/tibco.bw.entergy.roar.kpi3.AvgRespTimeKPI3-Resource.json">
+      <operation xmi:id="_7SYGYbezEeavRvj6FTgv0w" operationName="post" nickname="post-resptimekpi3" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_7SrBULezEeavRvj6FTgv0w"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_7SYGYrezEeavRvj6FTgv0w" bindingName="RestService3"/>
+  </sca:service>
+  <sca:service xmi:id="_XVFSILukEeaL38KnzA2Nnw" name="domaindetails" promote="ComponentDomainDetails/domaindetails">
+    <sca:interface.wsdl xmi:id="_XVYNELukEeaL38KnzA2Nnw" interface="http://xmlns.example.com/20161206163849PLT#wsdl.interface(domaindetails)" scaext:wsdlLocation="../Processes/tibco/bw/entergy/roar/kpi3/DomainDetails.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_XVh-ELukEeaL38KnzA2Nnw" name="RestService4" path="/domaindetails" docBasePath="http://localhost:7777/tibco.bw.entergy.RoarImplementation" docResourcePath="DomainDetails" basePath="/" connector="tibco.bw.entergy.roarimplementation.AuthenticationService" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/tibco.bw.entergy.roar.kpi3.DomainDetails-DomainDetails.json">
+      <operation xmi:id="_XVh-EbukEeaL38KnzA2Nnw" operationName="post" nickname="post-domaindetails" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_XVrvELukEeaL38KnzA2Nnw"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_XVh-ErukEeaL38KnzA2Nnw" bindingName="RestService4"/>
+  </sca:service>
+  <sca:property xmi:id="_kZVS0KJOEearg_Sw5bg77A" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kaMOcKJOEearg_Sw5bg77A" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kaYbsKJOEearg_Sw5bg77A" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kako8KJOEearg_Sw5bg77A" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ka9DcKJOEearg_Sw5bg77A" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kbJQsKJOEearg_Sw5bg77A" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kbPXUKJOEearg_Sw5bg77A" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kbVd8KJOEearg_Sw5bg77A" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_kbbkkKJOEearg_Sw5bg77A" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_MEMlgLCoEeaPipB1oZTwug" name="SchemaProperty" type="XMLSchema:string" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_v8CA8LCnEeaPipB1oZTwug" name="/PopulateKPI1Table/StartTime" type="XMLSchema:dateTime" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_6xuYILCnEeaPipB1oZTwug" name="/PopulateKPI1Table/Interval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_IwcVwLCoEeaPipB1oZTwug" name="/JDBC/Schema" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_3QhdELC5EeaPipB1oZTwug" name="/JDBC/ServerURL" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_3ossgLC5EeaPipB1oZTwug" name="/JDBC/UserName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_3wbFILC5EeaPipB1oZTwug" name="/JDBC/Password" type="property:password" scaext:simpleValue="#!oDFjKVg72L0bXGLL0qMVxQ==" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="__HiV4LVJEeaqgNMO2T_n-A" name="/JDBC/KPIJDBCConn" type="jdbc:JdbcDataSource" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_CRiv8LC5EeaPipB1oZTwug" name="/PurgeKPITable/StartTime" type="XMLSchema:dateTime" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_H2fmQLC5EeaPipB1oZTwug" name="/PurgeKPITable/Interval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_DYmqgLuBEea9-4whrES8Qg" name="/PopulateKPI3Table/StartTime" type="XMLSchema:dateTime" scaext:simpleValue="" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_IEubYLuBEea9-4whrES8Qg" name="/PopulateKPI3Table/Interval" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_1KN9kLueEeaR-pKa3f9kBA" name="/HTTP/HTTPPort" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_vB_DUK_SEeaes6nhJnhlyQ" name="ComponentTopServicesKPIImpl" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_vB_DUa_SEeaes6nhJnhlyQ" processName="tibco.bw.entergy.roar.kpi1.TopServicesKPIImpl"/>
+    <sca:service xmi:id="_vCI0UK_SEeaes6nhJnhlyQ" name="toptenkpi">
+      <sca:interface.wsdl xmi:id="_vCI0Ua_SEeaes6nhJnhlyQ" interface="http://xmlns.example.com/20161121154031PLT#wsdl.interface(toptenkpi)" scaext:wsdlLocation="../Processes/tibco/bw/entergy/roarimplementation/TopServicesKPIImpl.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_N4nnAK_YEealZ4gd7np8HA" name="Component1CopyOfQueryKPIDetails" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_N4nnAa_YEealZ4gd7np8HA" processName="tibco.bw.entergy.roar.kpi1.QueryKPIDetails"/>
+  </sca:component>
+  <sca:component xmi:id="_f0sJ8LCnEeaPipB1oZTwug" name="ComponentTimer_PopulateKPITable" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_f0sJ8bCnEeaPipB1oZTwug" processName="tibco.bw.entergy.roar.kpi1.Timer_PopulateKPI1Table"/>
+  </sca:component>
+  <sca:component xmi:id="__nm5QLC4EeaPipB1oZTwug" name="ComponentTimer_PurgeKPITable" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="__nm5QbC4EeaPipB1oZTwug" processName="tibco.bw.entergy.roar.kpi1.Timer_PurgeKPITable"/>
+  </sca:component>
+  <sca:component xmi:id="_upCcwLVBEeaqgNMO2T_n-A" name="ComponentFailureCountImpl" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_upCcwbVBEeaqgNMO2T_n-A" processName="tibco.bw.entergy.roar.kpi2.FailureCountImpl"/>
+  </sca:component>
+  <sca:component xmi:id="_lKXz0LVKEeaqgNMO2T_n-A" name="ComponentFailureCountKPI2" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_lKXz0bVKEeaqgNMO2T_n-A" processName="tibco.bw.entergy.roar.kpi2.FailureCountKPI2"/>
+    <sca:service xmi:id="_lKXz0rVKEeaqgNMO2T_n-A" name="failurecountkpi2">
+      <sca:interface.wsdl xmi:id="_lKXz07VKEeaqgNMO2T_n-A" interface="http://xmlns.example.com/20161128144100PLT#wsdl.interface(failurecountkpi2)" scaext:wsdlLocation="../Processes/tibco/bw/entergy/roar/kpi2/FailureCountKPI2.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_7Q44oLezEeavRvj6FTgv0w" name="ComponentAvgRespTimeKPI3" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_7Q44obezEeavRvj6FTgv0w" processName="tibco.bw.entergy.roar.kpi3.AvgRespTimeKPI3"/>
+    <sca:service xmi:id="_7RLzkLezEeavRvj6FTgv0w" name="resptimekpi3">
+      <sca:interface.wsdl xmi:id="_7RVkkLezEeavRvj6FTgv0w" interface="http://xmlns.example.com/20161201162008PLT#wsdl.interface(resptimekpi3)" scaext:wsdlLocation="../Processes/tibco/bw/entergy/roar/kpi3/AvgRespTimeKPI3.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_VqSOQLe0EeavRvj6FTgv0w" name="Component1FailureCountImpl" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_VqSOQbe0EeavRvj6FTgv0w" processName="tibco.bw.entergy.roar.kpi3.AvgrespTimeImpl"/>
+  </sca:component>
+  <sca:component xmi:id="_KxPaELuDEea9-4whrES8Qg" name="ComponentTimer_PopulateKPI2Table" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_KxPaEbuDEea9-4whrES8Qg" processName="tibco.bw.entergy.roar.kpi3.Timer_PopulateKPI2and3Table"/>
+  </sca:component>
+  <sca:component xmi:id="_XUyXMLukEeaL38KnzA2Nnw" name="ComponentDomainDetails" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_XUyXMbukEeaL38KnzA2Nnw" processName="tibco.bw.entergy.roar.kpi3.DomainDetails"/>
+    <sca:service xmi:id="_XU8IMLukEeaL38KnzA2Nnw" name="domaindetails">
+      <sca:interface.wsdl xmi:id="_XU8IMbukEeaL38KnzA2Nnw" interface="http://xmlns.example.com/20161206163849PLT#wsdl.interface(domaindetails)" scaext:wsdlLocation="../Processes/tibco/bw/entergy/roar/kpi3/DomainDetails.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_BmCgccNzEeaZGO8Pc-6geQ" name="ComponentLoadKPISampleData" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_BmCgcsNzEeaZGO8Pc-6geQ" processName="tibco.be.entergy.roar.kpisampledata.LoadKPISampleData"/>
+  </sca:component>
+</sca:composite>

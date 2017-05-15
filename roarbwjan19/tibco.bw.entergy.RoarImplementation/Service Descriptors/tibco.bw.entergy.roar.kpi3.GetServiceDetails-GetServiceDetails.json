@@ -1,0 +1,60 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8222",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/getservicedetails" : {
+      "post" : {
+        "description" : "",
+        "operationId" : "post-getservicedetails",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ReqServiceName"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a RespServDetails to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/RespServDetails"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ReqServiceName" : {
+      "type" : "object",
+      "required" : [ "ServiceName" ],
+      "properties" : {
+        "ServiceName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespServDetails" : {
+      "type" : "object",
+      "properties" : {
+        "Domain" : {
+          "type" : "string"
+        },
+        "AppNode" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

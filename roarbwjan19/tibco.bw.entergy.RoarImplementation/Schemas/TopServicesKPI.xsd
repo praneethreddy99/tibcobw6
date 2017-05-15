@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:tns="http://www.entergy.com/MaintainKPIInfo/" xmlns:wsbf="http://docs.oasis-open.org/wsrf/bf-2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.entergy.com/MaintainKPIInfo/">
+
+	<!-- <xsd:import namespace="http://docs.oasis-open.org/wsrf/bf-2" schemaLocation="./Fault/bf-2.xsd"/>
+-->
+	<xsd:element name="QueryForKPIs" type="tns:QueryForKPIsType">
+		<xsd:annotation>
+			<xsd:documentation>
+				<p/>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	
+	<!--The document definition used as the ResultSet when performing a Find Audit operation.-->
+	<xsd:element name="ResultSetForKPIs" type="tns:ResultSetKPIsType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				The document definition used as the ResultSet when
+				performing a Find Audit operation.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:complexType name="QueryForKPIsType">
+		<xsd:annotation>
+			<xsd:documentation/>
+		</xsd:annotation>
+		<xsd:sequence>
+		<!--  	<xsd:element name="QueryHeader" type="tns:QueryHeaderType" /> -->
+			<xsd:element name="QueryStatement" type="tns:QueryStatementType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<!-- <xsd:complexType name="InvalidQueryFault">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">This data entity is used within message exchanges to represent a failure in processing of the request because the requester specified a query that does not meet the specification of the dialect or could not be parsed by the service operation.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="wsbf:BaseFaultType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	-->
+    <xsd:complexType name="ListTopServices">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="1" minOccurs="0" name="ServiceNamesList">
+                <xsd:complexType>
+                	<xsd:sequence>
+                		<xsd:element maxOccurs="unbounded" minOccurs="1" name="ServiceNames">
+                			<xsd:complexType>
+                				<xsd:sequence>
+                					<xsd:element maxOccurs="1" minOccurs="1" name="ServiceName" type="xsd:string"/>
+                					<xsd:element maxOccurs="1" minOccurs="1" name="ServiceHitCount" type="xsd:string"/>
+                				</xsd:sequence>
+                			</xsd:complexType>
+            </xsd:element>
+                	</xsd:sequence>
+                </xsd:complexType>
+    		</xsd:element>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="StartTime" type="xsd:dateTime"/>
+    		<xsd:element maxOccurs="1" minOccurs="1" name="EndTime" type="xsd:dateTime"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="QueryStatementType">
+    	<xsd:sequence>
+    		<xsd:element name="QueryKPI" type="tns:QueryKPIType"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="QueryKPIType">
+    	<xsd:sequence>
+    		<xsd:element name="StartTime" type="xsd:dateTime"/>
+    		<xsd:element name="EndTime" type="xsd:dateTime"/>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="QueryHeaderType"/>
+
+    <xsd:complexType name="ResultSetKPIsType">
+    	<xsd:sequence>
+    		<xsd:element maxOccurs="unbounded" minOccurs="0" name="Results" type="tns:ResultsKPIType">
+    		</xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ResultsKPIType">
+    	<xsd:sequence>
+    		<xsd:element name="ServiceName" type="xsd:string" />
+    		<xsd:element name="TotalHits" type="xsd:int" maxOccurs="1" minOccurs="0"></xsd:element>
+    		<xsd:element maxOccurs="unbounded" minOccurs="1"
+    			name="ServiceHitCount" type="tns:ServiceHitCountType" />
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ServiceHitCountType">
+    	<xsd:sequence>
+    		<xsd:element name="Time" type="xsd:dateTime" />
+    		<xsd:element name="Hits" type="xsd:int"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

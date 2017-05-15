@@ -1,0 +1,72 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "To Authenticatae a user",
+    "description" : "To Authenticatae a user"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/authenticationservice" : {
+      "get" : {
+        "description" : "",
+        "operationId" : "get-authenticationservice",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "UserName",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
+          "name" : "Password",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "format" : "password",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a ResponseSchema to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/ResponseSchema"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ResponseSchema" : {
+      "type" : "object",
+      "required" : [ "ViewAssigned", "IsAuthenticated" ],
+      "properties" : {
+        "IsAuthenticated" : {
+          "type" : "boolean"
+        },
+        "ViewAssigned" : {
+          "type" : "string"
+        },
+        "Roles" : {
+          "$ref" : "#/definitions/Roles"
+        }
+      }
+    },
+    "Roles" : {
+      "type" : "object",
+      "properties" : {
+        "Role" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}
